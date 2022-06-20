@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/axios-project.iml" filepath="$PROJECT_DIR$/.idea/axios-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tailwind-1/.idea/tailwind-1.iml" filepath="$PROJECT_DIR$/../tailwind-1/.idea/tailwind-1.iml" />
     </modules>
   </component>
 </project>

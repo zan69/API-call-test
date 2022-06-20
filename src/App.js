@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import CardForm from "./Components/CardForm";
+import {useState} from "react";
+import axios from "axios";
 
-function App() {
+export default function App() {
+
+  const [result, setResult] = useState('')
+
+  const formResponseHandler = (endpoint, method, content) =>{
+    axios({
+      method: method,
+      url: endpoint,
+      responseType: 'stream'
+    })
+        .then(function (response) {
+          console.log(JSON.stringify(response, null, "\t"))
+          setResult(JSON.stringify(response, null, "\t"))
+        });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <CardForm formResponseHandler={formResponseHandler} result={result}/>
+  )
 }
-
-export default App;
